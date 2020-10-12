@@ -1,3 +1,21 @@
+## FORKED FROM IBM Cloud Garage Tekton Pipelines for IBM Cloud Secret Manager task.
+This repo is forked from the IBM cloud Garage repo for adding the IBM Cloud Secret Manager task as part of the pipeline.
+
+2-ibm-secret-manager.yaml:
+
+This tekton pipeline task is integrated with the pipeline to pull the secrets from the IBM Cloud Secret Manager Service and make it available as part of the application secrets in the Openshift Cluster environment.
+
+As part of the task, using the ibmcloud apikey available as part of the environment, the task generates the IBM Cloud Bearer Token that is essential to access the Secret Manager.  Apart from the IBM TOKENS, it also needs the 
+    1. "Name" for the secret (that to be created in the Openshift environment for the application to use)
+    2. "Base URL" to access the IBM Secret Manager Service
+    3. "Secret Type"
+    4. "Secret ID"
+    
+Using the available parameter, the Secret manager provides API Access to retrieve the Secret Data stored in the Service.
+Note: The current task uses static data ("Name", "Base URL", "Secret Type", "Secret ID") that has to be parameterised during the Integration.
+
+Below content provides the details on the IBM Cloud Garage Pipeline
+
 ## IBM Cloud Garage Tekton Pipelines
 
 This repository provides Tekton pipelines and tasks for all nodejs and java application Code Pattern templates.
